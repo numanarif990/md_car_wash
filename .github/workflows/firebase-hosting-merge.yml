@@ -5,16 +5,33 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Check out the repository
       - uses: actions/checkout@v4
+
+      # Step 2: Set up Flutter with the desired version
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.7.0 '  # or whichever version you are using
-      - run: flutter clean && flutter pub get && flutter build web
+          flutter-version: ' 3.27.2'  # Use the version you want (for example, '3.7.0' or '3.24.5')
+
+      # Step 3: Verify Flutter installation
+      - name: Verify Flutter Installation
+        run: flutter --version
+
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Step 5: Build the Flutter web app
+      - name: Build Flutter Web App
+        run: flutter build web --release
+
+      # Step 6: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
