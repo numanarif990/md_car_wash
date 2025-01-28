@@ -1,1 +1,31 @@
-{"storage":{"rules":"storage.rules"},"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"md-car-wash-ea4e6","configurations":{"web":"1:818043567785:web:2ce66f9f6cd03b868c33b8"}}}}}}
+{
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "md-car-wash-ea4e6",
+          "configurations": {
+            "web": "1:818043567785:web:2ce66f9f6cd03b868c33b8"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
