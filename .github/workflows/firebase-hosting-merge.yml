@@ -17,7 +17,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.2'  # Correct version without leading space
+          flutter-version: '3.27.2'  # Ensure there's no leading space
 
       # Step 3: Verify Flutter installation
       - name: Verify Flutter Installation
@@ -31,9 +31,16 @@ jobs:
       - name: Build Flutter Web App
         run: flutter build web --release
 
-      # Step 6: Deploy to Firebase Hosting
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      # Step 6: Install Firebase CLI
+      # Pre-install Firebase CLI to ensure version consistency
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      # Step 7: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MD_CAR_WASH_EA4E6 }}
+          channelId: live
           projectId: md-car-wash-ea4e6
