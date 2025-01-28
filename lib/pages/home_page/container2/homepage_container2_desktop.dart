@@ -4,7 +4,7 @@ import 'package:md_car_wash/controllers/homepage_container2_smooth_horizontal_co
 import 'package:md_car_wash/utils/custom_title.dart';
 
 import '../../../utils/constants.dart';
-import 'homepage_card.dart';
+import 'homepage_card_desktop.dart';
 
 class HomepageContainer2Desktop extends StatefulWidget {
   const HomepageContainer2Desktop({super.key});
@@ -97,7 +97,7 @@ class _HomepageContainer2DesktopState extends State<HomepageContainer2Desktop>
 
     return Row(
       children: [
-        HomepageCard(
+        HomepageCardDesktop(
           header: "Basic Wash",
           price: "24.9",
           color: colors[index % colors.length],

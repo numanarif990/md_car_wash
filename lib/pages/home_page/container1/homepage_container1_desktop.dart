@@ -52,7 +52,7 @@ class HomepageContainer1Desktop extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: size.width * 0.14),
-                  HomepageAnimatedText(),
+                  HomepageAnimatedText(fontSize: size.width * 0.045, boxSize: size.width * 0.05,secondFontsize: size.width*0.02,),
                   const SizedBox(height: 30),
                   Customelevatedbutton(
                     width:  size.width * 0.17,

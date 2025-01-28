@@ -3,7 +3,10 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:md_car_wash/utils/colors.dart';
 
 class HomepageAnimatedText extends StatelessWidget {
-  const HomepageAnimatedText({super.key});
+  final double fontSize;
+  final double boxSize;
+  final double secondFontsize;
+  const HomepageAnimatedText({super.key,required this.fontSize, required this.boxSize, required this.secondFontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +20,15 @@ class HomepageAnimatedText extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                   fontFamily: 'poppins',
-                  height: 0.7,
-                  fontSize: size.width * 0.045 , fontWeight: FontWeight.bold),
+                  height: 0.9,
+                  fontSize: fontSize , fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: size.width * 0.05,
+              height: boxSize,
               child: DefaultTextStyle(
                 style: TextStyle(
                   color: AppColors.primaryColor,
-                  fontSize: size.width * 0.045,
+                  fontSize: fontSize,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'poppins'
                 ),
@@ -45,7 +48,7 @@ class HomepageAnimatedText extends StatelessWidget {
             SizedBox(height: 20,),
             DefaultTextStyle(
               style: TextStyle(
-                fontSize: size.width*0.02,
+                fontSize: secondFontsize,
                 color: Colors.white,
                 fontFamily: 'montserrat',
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:md_car_wash/utils/customElevatedButton.dart';
 
-class HomepageCard extends StatelessWidget {
+class HomepageCardDesktop extends StatelessWidget {
   final String header;
   final String price;
   final String description;
@@ -11,7 +11,7 @@ class HomepageCard extends StatelessWidget {
   final VoidCallback onButtonPressed;
   final Color color;
 
-  const HomepageCard({
+  const HomepageCardDesktop({
     super.key,
     required this.color,
     required this.header,

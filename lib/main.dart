@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/controllers/home_page_controller_desktop.dart';
-import 'package:md_car_wash/pages/home_page/desktop_homepage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:get/get.dart';
 import 'package:md_car_wash/pages/home_page/homepage.dart';
 import 'package:md_car_wash/utils/colors.dart';
 import 'customScrollBehaviour.dart';
 
-void main() {
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
